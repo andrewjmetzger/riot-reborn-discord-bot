@@ -1,0 +1,17 @@
+{
+  "prefix": "!track",
+  "bot_channel": "450775463447756820",
+
+  "clan_name": "Evolution of Riot",
+  "staff_role": "Staff",
+  "general_channel": "449000926389207053",
+
+  "automatic_greets": "True",
+  "greeting_channel": "451228648372961290",
+  "send_direct_welcome": "True",
+
+  "points_per_recruit": 1,
+  "points_per_cap": 1,
+  "points_per_attended": 0.33,
+  "points_per_hosted": 1
+}
