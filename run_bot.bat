@@ -1,5 +1,5 @@
 cd "C:/Python Files"
-cd "sheets-tracker-discord-bot"
+cd "riot-reborn-discord-bot"
 python bot.py
 pause
 exit
