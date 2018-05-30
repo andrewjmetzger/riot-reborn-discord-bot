@@ -5,8 +5,8 @@ import random
 import discord
 from discord.ext import commands
 
-import sheets
 import player
+import sheets
 
 Player = player.Player
 
@@ -96,8 +96,8 @@ if server_cfg["automatic_greets"] == "True":
                      "Welcome, {0}. We hope you brought pizza.".format(
                          str(member.mention)),
                      "Welcome {0}. Leave your weapons by the door.".format(
-                         str(member.mention)), "A wild {0} appeared.".format(
-                str(member.nick)),
+                         str(member.mention)),
+                     "A wild {0} appeared.".format(str(member.nick)),
                      "Swoooosh. {0} has landed.".format(str(member.mention)),
                      "Brace yourselves. {0} just joined the server.".format(
                          str(member.mention)),
@@ -215,7 +215,6 @@ async def joined(ctx, player_name: str, date: str, recruited_by=None):
 
     Player.new(player_name, date, recruited_by=None)
 
-    logging.critical("recruited_by = " + str(recruited_by))
     msg = "Awww yeah! __" + player_name + "__ finally joined " + clan_name + " "
     msg += "on " + date + ".  "
 
@@ -224,10 +223,11 @@ async def joined(ctx, player_name: str, date: str, recruited_by=None):
         player.recruited_by = recruited_by
         recruiter = Player.find(recruited_by)
         recruiter.total_points += points_per_recruit
-        msg += "__" + recruited_by + "__ earned one point for recruiting them.\n"
+        msg += "__" + recruited_by + "__ earned " + str(
+            points_per_recruit) + " point(s) for recruiting them.\n"
 
     else:
-        player = Player.find( player_name )
+        player = Player.find(player_name)
         player.recruited_by = ""
         msg += ""
 
@@ -255,7 +255,7 @@ async def leave(ctx, player_name: str):
 
     msg = ""
     msg += "[WARN] The record for __" + player_name + "__ was removed "
-    msg += "by " + str(ctx.message.author.nick) + " "
+    msg += "by " + str(ctx.message.author.name) + " "
     msg += "on " + time.strftime("%Y-%m-%d") + ".\n"
     msg += "*If this was not intended, notify your administrator immediately "
     msg += "so that they can try to revert the change.*"
@@ -280,6 +280,7 @@ async def capped(ctx, player_name: str, date: str):
     player.last_cap = date
 
     msg = "Woohoo! __" + player_name + "__ has capped on " + date + "!\n"
+    msg += "They just earned " + str(points_per_cap) + " point(s)."
     msg += "*(More info: `!track whois \"" + player_name + "\"`)*"
 
     await bot.send_message(bot_channel, msg)
@@ -301,7 +302,8 @@ async def attended(ctx, player_name: str, date: str):
     player.total_points += points_per_attended
     player.last_event = date
 
-    msg = "Alright! __" + player_name + "__ earned 0.3 points "
+    msg = "Alright! __" + player_name + "__ earned "
+    msg += str(points_per_attended) + " point(s) "
     msg += "for attending an event on " + date + ".\n"
     msg += "*(More info: `!track whois \"" + player_name + "\"`)*"
     await bot.send_message(bot_channel, msg)
@@ -323,7 +325,8 @@ async def hosted(ctx, player_name: str, date: str):
     player.total_points += points_per_hosted
     player.last_event = date
 
-    msg = "Alright! __" + player_name + "__ earned a point "
+    msg = "Alright! __" + player_name + "__ earned " + str(
+        points_per_hosted) + " point(s) "
     msg += "for hosting an event on " + date + ".\n"
     msg += "*(More info: `!track whois \"" + player_name + "\"`)*"
     await bot.send_message(bot_channel, msg)
@@ -341,8 +344,8 @@ async def whois(ctx, player_name: str):
     await  bot.send_typing(ctx.message.channel)
 
     info = "```\n"
-    info += "## WHOIS DATA FOR " + player_name.upper() + " ##\n"
-    info += ('-' * (len(info) - 3)) + "\n"
+    info += "**RECORDS FOR " + player_name.upper() + "**\n"
+    info += ('-' * (len(info) - 5)) + "\n"
 
     player = Player.find(player_name)
 
