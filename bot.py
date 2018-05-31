@@ -116,10 +116,7 @@ if server_cfg["automatic_greets"] == "True":
         msg = random.choice(greetings)
         await bot.send_message(greeting_channel, msg)
 
-        if server_cfg["send_direct_welcome"] == "False":
-            pass
-
-        elif server_cfg["send_direct_welcome"] == "True":
+        if server_cfg["send_direct_welcome"] == "True":
             msg = ".\n"
             msg += "Hey there!  "
             msg += "Welcome to the " + clan_name + " discord server.\n\n"
@@ -128,15 +125,12 @@ if server_cfg["automatic_greets"] == "True":
                    "already. \n\n" \
                    "As a reminder: *You will not be able to talk outside of " \
                    "the #pleb-landing channel until you officially join " + \
-                   clan_name + "!*\n\n"
+                   clan_name + "!* If you are already a member of the clan, " \
+                               "your role should be updated shortly.\n\n"
             msg += "Stay classy.\n" \
                    "~ riot-bot"
 
             await bot.send_message(member, msg)
-
-if server_cfg["automatic_greets"] == "False":
-    pass
-
 
 #################
 # DOCUMENTATION #
@@ -174,7 +168,7 @@ async def sync(ctx):
            "https://clan-tracker.docs.nerdoncloud.com/wheres-my-data \n"
     msg += "----------------\n"
     msg += "If your data has not appeared in the spreadsheet after carefully "
-    msg += "following all of the above steps please DM an administrator "
+    msg += "following all of the suggested steps please DM an administrator "
     msg += "for support."
 
     await bot.send_message(bot_channel, msg)

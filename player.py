@@ -7,16 +7,19 @@ key_col_index = {
     "events_attended": 4,
     "events_hosted": 5,
     "times_capped": 6,
-    "total_points": 7,
-    "last_event": 8,
-    "last_cap": 9,
-    "recruited_by": 10
+    "last_event": 7,
+    "last_cap": 8,
+    "recruited_by": 9,
+    "players_recruited": 10,
+    "total_points": 11
+
 }
 
 num_cols = [
     "events_attended",
     "events_hosted",
     "times_capped",
+    "players_recruited",
     "total_points"
 ]
 
@@ -34,10 +37,11 @@ class Player:
             0,  # events_attended
             0,  # events_hosted
             0,  # times_capped
-            0.00,  # total_points
             "",  # last_event
             "",  # last_cap
-            ""  # recruited_by
+            "",  # recruited_by
+            0,  # players_recruited
+            0.00  # total_points
         ], "USER_ENTERED" )
 
         # re-find the row and cache it
@@ -82,8 +86,9 @@ class Player:
             "events_attended=" + str( self.events_attended ) + ", " + \
             "events_hosted=" + str( self.events_hosted ) + ", " + \
             "times_capped=" + str( self.times_capped ) + ", " + \
-            "total_points=" + str( self.total_points ) + ", " + \
             "last_event=" + self.last_event + ", " + \
             "last_cap=" + self.last_cap + \
             "recruited_by=" + self.recruited_by + \
+            "players_recruited=" + str( self.players_recruited ) + \
+            "total_points=" + str( self.total_points) + \
             ")"
