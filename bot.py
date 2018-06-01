@@ -36,7 +36,9 @@ async def on_ready():
     logging.info("--------")
     logging.info("Starting up...")
     logging.info(str("Logged in as {0.user}, with ID {0.user.id}".format(bot)))
-    await bot.change_presence(game=discord.Game(name='with your mind'))
+    await bot.change_presence(game=discord.Game(name='hide and seek | Help: '
+                                                     '!track '
+                                                     'rtfm'))
 
     logging.info(discord.version_info)
 
@@ -67,11 +69,15 @@ async def on_ready():
 ########################
 
 member = discord.Member
-if server_cfg["automatic_greets"] == "True":
-    @bot.event
-    async def on_member_join(member):
-        server = member.server
 
+
+@bot.event
+async def on_member_join(member):
+    server = member.server
+
+# TODO: Logic to add evolved role if member is in clan
+
+    if server_cfg["automatic_greets"] == "True":
         bot.send_typing(greeting_channel)
 
         # Define a list of greetings
@@ -107,7 +113,7 @@ if server_cfg["automatic_greets"] == "True":
                          str(member.mention)),
                      "{0} just slid into the server.".format(
                          str(member.mention)),
-                     "A {0} has spawned in the server.",
+                     "A {0} has spawned in the server.".format(member.mention),
                      "{0} hopped into the server. Kangaroo!!".format(
                          str(member.mention)),
                      "{0} just showed up. Hold my beer.".format(
@@ -116,21 +122,20 @@ if server_cfg["automatic_greets"] == "True":
         msg = random.choice(greetings)
         await bot.send_message(greeting_channel, msg)
 
-        if server_cfg["send_direct_welcome"] == "True":
-            msg = ".\n"
-            msg += "Hey there!  "
-            msg += "Welcome to the " + clan_name + " discord server.\n\n"
-            msg += "Please take a moment to look over the rules and " \
-                   "information posted in **#announcements** if you haven't " \
-                   "already. \n\n" \
-                   "As a reminder: *You will not be able to talk outside of " \
-                   "the #pleb-landing channel until you officially join " + \
-                   clan_name + "!* If you are already a member of the clan, " \
-                               "your role should be updated shortly.\n\n"
-            msg += "Stay classy.\n" \
-                   "~ riot-bot"
+    if server_cfg["send_direct_welcome"] == "True":
+        msg = ".\n"
+        msg += "Hey there!  "
+        msg += "Welcome to the " + clan_name + " discord server.\n\n"
+        msg += "Please take a moment to look over the rules and " \
+               "information posted in **#announcements** if you haven't " \
+               "already. \n\n" \
+               "As a reminder: *You will not be able to talk outside of " \
+               "the #pleb-landing channel until you officially join " + \
+               clan_name + "!* If you are already a member of the clan, " \
+                           "your role should be updated shortly.\n\n"
+        msg += "Stay classy. \n"
+        await bot.send_message(member, msg)
 
-            await bot.send_message(member, msg)
 
 #################
 # DOCUMENTATION #
@@ -427,7 +432,6 @@ async def suspend(ctx, duration: int = 15):
 
     await bot.send_message(bot_channel, msg)
 
-    await bot.close()
     await bot.logout()
 
 
