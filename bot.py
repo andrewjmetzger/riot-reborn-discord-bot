@@ -74,6 +74,14 @@ member = discord.Member
 @bot.event
 async def on_member_join(member):
     server = member.server
+    bot.send_typing(greeting_channel)
+    msg = "Welcome to " + clan_name + "! " \
+           "Please take a moment to read the notices in #announcements. " \
+           "Enjoy your stay!"
+    msg += "Can't talk? Change your discord nickname to match " \
+           "your RSN, so our robots can check your rank and give you " \
+           "permission."
+    bot.send_message(greeting_channel)
 
 # TODO: Logic to add evolved role if member is in clan
 
