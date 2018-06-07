@@ -5,8 +5,6 @@
 You can record when a player leaves the clan with the `leave` command. This removes the player's record from the associated spreadsheet, which prevents them from being tracked in the future.
 
 {% hint style="danger" %}
-#### WARNING
-
 The `leave` command is highly destructive, and in most cases, _permanent_. Although administrators have the ability to override most of the bot's actions, this is not always the case. Do not rely on such powers, _your administrators may not be able to revert the deletion_.
 
 **Use this function sparingly**. You have been warned.
