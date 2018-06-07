@@ -1,6 +1,6 @@
 # Track events attended
 
-##  Overview {#overview}
+## Overview {#overview}
 
 You can record when a player hosts a clan event with the `attended` command. This increases the player's _Events Attended_ by one, and adds the appropriate number of points to the player's total.
 
