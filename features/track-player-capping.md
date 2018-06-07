@@ -1,4 +1,4 @@
-# Track player capping
+# Track players capping
 
 ## Overview
 
