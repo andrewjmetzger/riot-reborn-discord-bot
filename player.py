@@ -37,8 +37,8 @@ class Player:
             0,  # events_attended
             0,  # events_hosted
             0,  # times_capped
-            "",  # last_event
-            "",  # last_cap
+            "Never",  # last_event
+            "Never",  # last_cap
             "",  # recruited_by
             0,  # players_recruited
             0.00  # total_points
