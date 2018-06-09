@@ -286,8 +286,8 @@ async def capped(ctx, player_name: str, date: str):
     player.total_points += points_per_cap
     player.last_cap = date
 
-    msg = "Woohoo! __" + player_name + "__ has capped on " + date + "!\n"
-    msg += "They just earned " + str(points_per_cap) + " point(s)."
+    msg = "Woohoo! __" + player_name + "__ has capped on " + date + "! "
+    msg += "They just earned " + str(points_per_cap) + " point(s). \n"
     msg += "*(More info: `!track whois \"" + player_name + "\"`)*"
 
     await bot.send_message(bot_channel, msg)
