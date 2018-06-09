@@ -394,6 +394,11 @@ async def rename(ctx, old_name: str, new_name: str, date: str):
     await bot.send_message(bot_channel, msg)
 
 
+@bot.command(pass_context=True)
+async def dm(ctx, recipient_id, msg):
+
+    await bot.send_message(bot.get_user_info(recipient_id), msg)
+
 ################################
 #        UTILS COMMANDS        #
 ################################
