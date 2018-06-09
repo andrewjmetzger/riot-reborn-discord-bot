@@ -395,9 +395,14 @@ async def rename(ctx, old_name: str, new_name: str, date: str):
 
 
 @bot.command(pass_context=True)
-async def dm(ctx, recipient_id, msg):
+async def dm(ctx, nick, msg):
+    server = discord.Server
 
-    await bot.send_message(bot.get_user_info(recipient_id), msg)
+    recipient = ctx.message.server.get_member_named(nick)
+
+    msg = msg.replace("$nick", nick)
+    await bot.send_message(recipient, msg)
+
 
 ################################
 #        UTILS COMMANDS        #
