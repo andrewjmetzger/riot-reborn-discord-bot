@@ -17,5 +17,5 @@
 
 ## Administration
 
-* [Authentication and Credential Management](administration/credentials.md)
+* [Authentication and credential management](administration/credentials.md)
 
