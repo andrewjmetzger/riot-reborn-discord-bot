@@ -178,7 +178,7 @@ async def sync(ctx):
     msg = ""
     msg += "To troubleshoot missing data, please consult the bot's online " \
            "documentation: \n" \
-           "https://clan-tracker.docs.nerdoncloud.com/wheres-my-data \n"
+           "https://clan-tracker.docs.nerdoncloud.com/troubleshooting/missing-data \n"
     msg += "----------------\n"
     msg += "If your data has not appeared in the spreadsheet after carefully "
     msg += "following all of the suggested steps please DM an administrator "
