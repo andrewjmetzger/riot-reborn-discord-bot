@@ -29,3 +29,11 @@ _Required._ The name of a player who left the clan. Always surrounded by double 
 _Required._ The date `player_name` left the clan. Specified in the format `M/D/YYYY`. For instance, if the player left on 12 March 1969, `date` would be `3/12/1969`.  
 
 
+## Recover recently deleted records
+
+For information on restoring recently deleted records, see the help topic linked below.
+
+{% page-ref page="../troubleshooting/recover-deleted-records.md" %}
+
+
+

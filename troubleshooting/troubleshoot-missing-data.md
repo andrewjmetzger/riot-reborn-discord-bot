@@ -1,6 +1,8 @@
-# Troubleshoot missing data
+# Troubleshoot missing records
 
-## For newly synced data
+
+
+## For recently added records
 
 ### Refresh the page
 
@@ -32,6 +34,12 @@ If refreshing the page does not work, try clearing your browser's cache and cook
 * [Firefox](https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox#w_how-do-i-clear-my-history) \(in the Details dialog, check **Cache** and **Cookies**\)
 * [Safari](https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac)
 * [Microsoft Edge](https://support.microsoft.com/en-us/help/10607/microsoft-edge-view-delete-browser-history)
+
+## For accidentally removed records
+
+To recover a record that was deleted by mistake, see the help topic linked below.
+
+{% page-ref page="recover-deleted-records.md" %}
 
 
 

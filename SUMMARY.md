@@ -12,5 +12,7 @@
 
 ## Troubleshooting
 
-* [Troubleshoot missing data](troubleshooting/troubleshoot-missing-data.md)
+* [Troubleshoot missing records](troubleshooting/troubleshoot-missing-data.md)
+* [Recover deleted records](troubleshooting/recover-deleted-records.md)
+* [Untitled](troubleshooting/untitled.md)
 
