@@ -14,5 +14,8 @@
 
 * [Troubleshoot missing records](troubleshooting/troubleshoot-missing-data.md)
 * [Recover deleted records](troubleshooting/recover-deleted-records.md)
-* [Untitled](troubleshooting/untitled.md)
+
+## Administration
+
+* [Authenticate with Google Sheets](administration/authenticate-with-google-sheets.md)
 

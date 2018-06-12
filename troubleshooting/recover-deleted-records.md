@@ -8,7 +8,15 @@ If a record was accidentally removed with the [`leave` command](../commands/leav
 
    ![Using the File menu to access the version history of a spreadsheet in Google Sheets.](../.gitbook/assets/image%20%282%29.png)
 
-2. In the Version history pane on the right, **select an older revision**, which contains the record you want to restore. Notice the affected records become **highlighted** in the preview to the left. 
+2. In the Version history pane on the right, **select an older version**, which contains the record you want to restore. 
 
-   ![Restoring a deleted record with the Version history panel.](../.gitbook/assets/image%20%283%29.png)
+{% hint style="info" %}
+The version you should restore will generally b e created by the bot user, so look for the service account username, as defined in 
+{% endhint %}
+
+![The version history panel, with an older version of the spreadsheet selected.](../.gitbook/assets/image%20%284%29.png)
+
+1. Notice the affected records become **highlighted** in the preview to the left.
+2. Click **Restore this version**
+3. asdf
 
