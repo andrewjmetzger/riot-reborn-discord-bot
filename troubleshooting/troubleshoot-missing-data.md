@@ -6,10 +6,10 @@
 
 If you can’t see recently added data, try to refresh the page. Choose your browser below:
 
-* Google Chrome: At the top left, click **Reload this page** ![Reload](https://storage.cloud.google.com/support-kms-prod/HhZSg0V7M62Ut1ubzpDL7dw92jErZKpIAC9x).
-* Firefox: At the top, click **Reload current page** ![Reload](https://storage.cloud.google.com/support-kms-prod/HhZSg0V7M62Ut1ubzpDL7dw92jErZKpIAC9x)
-* Safari: **View &gt; Reload page.**
-* Microsoft Edge: On your keyboard, press **F5**.
+* Google Chrome: At the top left, click **Reload this page**
+* Firefox: At the top, click **Reload current page**
+* Safari: **View &gt; Reload page**
+* Microsoft Edge: On your keyboard, press **F5**
 
 ### Disable active filters
 
@@ -26,7 +26,7 @@ By default, filters stay active even after the page is refreshed, which can some
 
 ### Clear cache and cookies
 
-If refreshing the page does not work, try clearing your browser's cache and cookies. Choose your browser below for detailed instructions:
+If refreshing the page does not work, try clearing your browser's cache and cookies. Choose your browser below:
 
 * [Google Chrome](https://support.google.com/accounts/answer/32050?co=GENIE.Platform%3DDesktop&oco=1)
 * [Firefox](https://support.mozilla.org/en-US/kb/delete-browsing-search-download-history-firefox#w_how-do-i-clear-my-history) \(in the Details dialog, check **Cache** and **Cookies**\)
