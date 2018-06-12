@@ -10,3 +10,13 @@
 * [Track events attended](commands/attended.md)
 * [Track players leaving](commands/leave.md)
 
+## Troubleshooting
+
+* [Troubleshoot missing records](troubleshooting/missing-data.md)
+* [Recover deleted records](troubleshooting/recover-deleted-records.md)
+
+## Administration
+
+* [Authentication and credential management](administration/credentials.md)
+* [Untitled](untitled.md)
+
