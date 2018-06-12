@@ -10,3 +10,7 @@
 * [Track events attended](commands/attended.md)
 * [Track players leaving](commands/leave.md)
 
+## Troubleshooting
+
+* [Troubleshoot missing data](troubleshooting/troubleshoot-missing-data.md)
+
