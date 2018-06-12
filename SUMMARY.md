@@ -12,10 +12,11 @@
 
 ## Troubleshooting
 
-* [Troubleshoot missing records](troubleshooting/troubleshoot-missing-data.md)
+* [Troubleshoot missing records](troubleshooting/missing-data.md)
 * [Recover deleted records](troubleshooting/recover-deleted-records.md)
 
 ## Administration
 
 * [Authentication and credential management](administration/credentials.md)
+* [Untitled](untitled.md)
 
