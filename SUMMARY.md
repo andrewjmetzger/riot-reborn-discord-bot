@@ -17,5 +17,5 @@
 
 ## Administration
 
-* [Authenticate with Google Sheets](administration/authenticate-with-google-sheets.md)
+* [Authentication and Credential Management](administration/authenticate-with-google-sheets.md)
 

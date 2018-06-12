@@ -1,10 +1,16 @@
-# Authenticate with Google Sheets
+# Authentication and Credential Management
 
 ## Requirements
 
-* A custom domain \(e.g: yourclansite.com\)
-* Google apps set up on the domain
-* Administrative access to Google Drive, and Google Sheets within your organisation/domain
+* A registered domain \(e.g: `your-clan.com` or `clan.your-domain.com`\)
+* G Suite enrollment for your domain
+* Administrative access to the G Suite service running on the domain
+* Ownership of a Discord server
+* A Discord app for the bot to run under, with associated Bot User added to the server
 
-## Creating a Service Account
+## Google Sheets 
+
+### Creating a Service Account
+
+
 

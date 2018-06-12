@@ -11,7 +11,7 @@ If a record was accidentally removed with the [`leave` command](../commands/leav
 2. In the Version history pane on the right, **select an older version**, which contains the record you want to restore. 
 
 {% hint style="info" %}
-The version you should restore will generally b e created by the bot user, so look for the service account username, as defined in 
+The version you should restore will generally b e created by the bot user, so look for the service account username, as defined in your server's [`credentials.json`](../administration/authenticate-with-google-sheets.md).
 {% endhint %}
 
 ![The version history panel, with an older version of the spreadsheet selected.](../.gitbook/assets/image%20%284%29.png)
