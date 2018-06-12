@@ -13,7 +13,7 @@ If you can’t see recently added data, try to refresh the page. Choose your bro
 
 ### Disable active filters
 
-By default, filters stay active even after the page is refreshed, which can sometimes hide data from view, Follow these steps to disable filters:
+By default, filters stay active even after the page is refreshed, which can sometimes hide data from view. Follow these steps to disable filters:
 
 1. With your spreadsheet open, click the **Clan List** sheet tab to make sure it is active.
 2. Look at the column and row labels. If these labels are shaded **green** as in the screenshot below, a filter is active.
