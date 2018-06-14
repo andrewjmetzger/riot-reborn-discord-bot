@@ -10,8 +10,8 @@
   "greeting_channel": "451228648372961290",
   "send_direct_welcome": "True",
 
-  "points_per_recruit": 1,
+  "points_per_recruit": 0.25,
   "points_per_cap": 1,
-  "points_per_attended": 0.33,
-  "points_per_hosted": 1
+  "points_per_attended": 0.25,
+  "points_per_hosted": 2
 }

@@ -356,18 +356,21 @@ async def whois(ctx, player_name: str):
 
     player = Player.find(player_name)
 
-    info += "    Player Name : " + player.name + "\n"
-    info += "      Join Date : " + player.join_date + "\n"
-    info += "           Rank : " + player.rank + "\n"
-    info += "Events Attended : " + str(player.events_attended)
-    info += " (" + str(points_per_attended) + " points each) \n"
-    info += "  Events Hosted : " + str(player.events_hosted)
-    info += " (" + str(points_per_hosted) + " points each) \n"
-    info += "    (Last Event : " + player.last_event + ")\n"
-    info += "   Times Capped : " + str(player.times_capped)
-    info += " (" + str(points_per_cap) + " points each) \n"
-    info += "      (Last Cap : " + player.last_cap + ")\n"
-    info += "   Total Points : " + str(player.total_points) + "\n"
+    info += "      Player Name : \"" + player.name + "\"\n"
+    info += "        Join Date : " + player.join_date + "\n"
+    info += "     Recruited By : \"" + player.recruited_by + "\"\n"
+    info += "             Rank : " + player.rank + "\n"
+    info += "  Events Attended : " + str(int(player.events_attended)) + " "
+    info += "(" + str(points_per_attended) + " point(s) each) \n"
+    info += "    Events Hosted : " + str(int(player.events_hosted)) + " "
+    info += "(" + str(points_per_hosted) + " point(s) each) \n"
+    info += "      (Last Event : " + player.last_event + ")\n"
+    info += "     Times Capped : " + str(int(player.times_capped)) + " "
+    info += "(" + str(points_per_cap) + " point(s) each) \n"
+    info += "        (Last Cap : " + player.last_cap + ")\n"
+    info += "Players Recruited : " + str(int(player.players_recruited)) + " "
+    info += "(" + str(points_per_recruit) + " point(s) each) \n"
+    info += "     Total Points : " + str(player.total_points) + "\n"
     info += "```"
 
     await bot.send_message(ctx.message.channel, info)
