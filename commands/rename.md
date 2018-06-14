@@ -22,7 +22,7 @@ _Required._ The player's previous name. Always surrounded by double quotes. Case
 
 #### new\_name {#player_name}
 
-_Required._ The player's current, updated name. Always surrounded by double quotes. Case matters, `"JOHN DOE"` and `"john doe"` are considered two different players.
+_Required._ The player's updated name. Always surrounded by double quotes. Case matters, `"JOHN DOE"` and `"john doe"` are considered two different players.
 
 #### date {#date}
 
