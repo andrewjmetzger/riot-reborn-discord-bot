@@ -16,7 +16,7 @@ A typical`joined` command is generally structured as follows:
 
 #### new\_player
 
-_Required._ The name of the player to add to the tracker. Always surrounded by double quotes.
+_Required._ The name of the player to add to the tracker. Always surrounded by double quotes. Case matters, `"JOHN DOE"` and `"john doe"` are considered two different players.
 
 #### date
 
@@ -24,7 +24,7 @@ _Required._ The date `new_player` was recruited into the clan. Specified in the 
 
 #### recruiter
 
-_Optional_. If points are awarded for new recruits, the name of the existing player who recruited `new_player` into the clan. Always surrounded by double quotes.
+_Optional_. If points are awarded for new recruits, the name of the existing player who recruited `new_player` into the clan. Always surrounded by double quotes. Case matters, `"JOHN DOE"` and `"john doe"` are considered two different players.
 
 Awards the appropriate number of points to the recruiter, if specified. Has no effect otherwise.
 
