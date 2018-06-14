@@ -50,8 +50,10 @@ class Player:
         return player
 
     def find( name ):
-        target_row = player_sheet().find( name ).row
-
+        # target_row = player_sheet().find( name ).row
+        names = player_sheet().range("A1:A{}".format(player_sheet().row_count))
+        list = [found for found in names if found.value == name]
+        target_row = list[0].row
         player = Player()
         player._row = target_row
 
