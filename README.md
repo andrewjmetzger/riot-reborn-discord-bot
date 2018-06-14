@@ -4,8 +4,8 @@ This is the user guide for the tracker bot used by your clan's discord server.
 
 ## Features
 
+* Self-hosted Python bot with integration into Google Sheets
 * Simple deployment to the environment of your choice
-* Self-hosted
 * Customise and re-brand with server-specific configuration
 * Easily track new members as your clan grows
 * Monitor most clan actions, including:
