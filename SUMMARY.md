@@ -19,5 +19,5 @@
 ## Administration
 
 * [Authentication and credential management](administration/credentials.md)
-* [Configure server-specific options](server-specific-options.md)
+* [Configure server-specific options](administration/server-specific-options.md)
 
