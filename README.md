@@ -7,7 +7,7 @@ This is the user guide for the tracker bot used by your clan's discord server.
 * Self-hosted Python bot with integration into Google Sheets for data storage
 * Simple deployment to the environment of your choice
 * Straightforward [credential management](administration/credentials.md) for both Discord and Google Sheets
-* Customise and re-brand with [server-specific configuration](untitled.md)
+* Customise and re-brand with [server-specific configuration](server-specific-options.md)
 * Easily track new members as your clan grows
 * Monitor most clan actions, including:
   * Clan growth
