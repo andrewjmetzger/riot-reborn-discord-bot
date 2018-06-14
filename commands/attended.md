@@ -16,7 +16,7 @@ A typical`attended` command is generally structured as follows:
 
 #### player\_name {#player_name}
 
-_Required._ The name of a player who attended the event. Always surrounded by double quotes.
+_Required._ The name of a player who attended the event. Always surrounded by double quotes. Case matters, `"JOHN DOE"` and `"john doe"` are considered two different players.
 
 #### date {#date}
 

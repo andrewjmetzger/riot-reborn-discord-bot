@@ -16,7 +16,7 @@ A typical`capped` command is generally structured as follows:
 
 #### player\_name
 
-_Required._ The name of the player that capped. Always surrounded by double quotes.
+_Required._ The name of the player that capped. Always surrounded by double quotes. Case matters, `"JOHN DOE"` and `"john doe"` are considered two different players.
 
 #### date
 

@@ -8,7 +8,7 @@ If a record was accidentally removed with the [`leave` command](../commands/leav
 The version you restore will generally be created by the bot, so look for its service account username, as defined in your server's [`credentials.json`](../administration/credentials.md) \(in this case, `bender`\).
 {% endhint %}
 
-## Restoring a recently deleted record.
+## Restoring a recently deleted record
 
 1. From the menu at the top of the window, click **File** &gt; **Version history** &gt; **See version history**
 

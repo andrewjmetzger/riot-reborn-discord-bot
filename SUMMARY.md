@@ -8,6 +8,7 @@
 * [Track players capping](commands/capped.md)
 * [Track events hosted](commands/hosted.md)
 * [Track events attended](commands/attended.md)
+* [Track player name changes](commands/rename.md)
 * [Track players leaving](commands/leave.md)
 
 ## Troubleshooting
@@ -18,5 +19,5 @@
 ## Administration
 
 * [Authentication and credential management](administration/credentials.md)
-* [Configure server-specific options](untitled.md)
+* [Configure server-specific options](administration/server-specific-options.md)
 

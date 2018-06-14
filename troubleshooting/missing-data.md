@@ -1,7 +1,5 @@
 # Troubleshoot missing records
 
-
-
 ## For recently added records
 
 ### Refresh the page
@@ -35,7 +33,7 @@ If refreshing the page does not work, try clearing your browser's cache and cook
 * [Safari](https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac)
 * [Microsoft Edge](https://support.microsoft.com/en-us/help/10607/microsoft-edge-view-delete-browser-history)
 
-## For accidentally removed records
+## For recently removed records
 
 To recover a record that was deleted by mistake, see the help topic linked below.
 
