@@ -166,27 +166,6 @@ async def rtfm(ctx):
     await bot.send_message(bot_channel, msg)
 
 
-@rtfm.command(pass_context=True)
-async def sync(ctx):
-    """
-    Troubleshooting steps for missing data.
-
-    Usage:
-        !track rtfm sync
-    """
-
-    msg = ""
-    msg += "To troubleshoot missing data, please consult the bot's online " \
-           "documentation: \n" \
-           "https://clan-tracker.docs.nerdoncloud.com/troubleshooting/missing-data \n"
-    msg += "----------------\n"
-    msg += "If your data has not appeared in the spreadsheet after carefully "
-    msg += "following all of the suggested steps please DM an administrator "
-    msg += "for support."
-
-    await bot.send_message(bot_channel, msg)
-
-
 ################
 # BOT COMMANDS #
 ################
@@ -237,9 +216,6 @@ async def joined(ctx, player_name: str, date: str, recruited_by=None):
         player = Player.find(player_name)
         player.recruited_by = ""
         msg += ""
-
-    msg += "*The spreadsheet should reflect this shortly.* "
-    msg += "*(More info: `!track rtfm sync`)*"
 
     await bot.send_message(bot_channel, msg)
 
