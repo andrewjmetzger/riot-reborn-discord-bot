@@ -28,4 +28,4 @@ def get_sheet():
 def get_player_sheet():
     sheet = get_sheet()
 
-    return sheet.get_worksheet( 1 )
+    return sheet.get_worksheet( 0 )
