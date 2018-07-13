@@ -18,7 +18,7 @@ server_cfg = json.load(open("server.json"))
 discord_token = credentials_cfg["discord_token"]
 
 prefix = server_cfg["prefix"]
-if prefix.length > 2:
+if len(prefix) > 2:
     prefix += " "
     logging.warning("Prefix is a string, appended space")
 
@@ -43,7 +43,7 @@ async def on_ready():
     logging.info("--------")
     logging.info("Starting up...")
     logging.info(str("Logged in as {0.user}, with ID {0.user.id}".format(bot)))
-    await bot.change_presence(game=discord.Game(name='hide and seek | Help: '
+    await bot.change_presence(game=discord.Game(name='Help: '
                                                      + prefix +
                                                      'rtfm'))
 
