@@ -1,6 +1,6 @@
 # Clan Tracker Discord Bot
 
-A discod bot that helps manage your RuneScape 3 clan.
+A discord bot that helps manage your RuneScape 3 clan.
 
 # Get help
 
