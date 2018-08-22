@@ -97,8 +97,8 @@ async def on_member_join(member):
 
         # Define a list of greetings
 
-        greetings = ["Hey there, {0}".format(str(member.nick)),
-                     "Yo, {0}!^".format(str(member.nick)),
+        greetings = ["Hey there, {0}".format(str(member.mention)),
+                     "Yo, {0}!^".format(str(member.mention)),
                      "Look, someone's here! ... Never mind, it's only "
                      "{0}".format(str(member.mention)),
                      "Really? {0} again?".format(str(member.mention)),
@@ -118,7 +118,7 @@ async def on_member_join(member):
                          str(member.mention)),
                      "Welcome {0}. Leave your weapons by the door.".format(
                          str(member.mention)),
-                     "A wild {0} appeared.".format(str(member.nick)),
+                     "A wild {0} appeared.".format(str(member.mention)),
                      "Swoooosh. {0} has landed.".format(str(member.mention)),
                      "Brace yourselves. {0} just joined the server.".format(
                          str(member.mention)),
