@@ -33,7 +33,7 @@ class Player:
         row = sheet.append_row( [
             name,
             date,  # join_date
-            "01 Recruit",  # rank
+            "Recruit",  # rank
             0,  # events_attended
             0,  # events_hosted
             0,  # times_capped
@@ -50,7 +50,6 @@ class Player:
         return player
 
     def find( name ):
-        # target_row = player_sheet().find( name ).row
         names = player_sheet().range("A1:A{}".format(player_sheet().row_count))
         list = [found for found in names if found.value == name]
         target_row = list[0].row
