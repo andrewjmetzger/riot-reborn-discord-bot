@@ -20,7 +20,7 @@ discord_token = credentials_cfg["discord_token"]
 prefix = server_cfg["prefix"]
 if len(prefix) > 2:
     prefix += " "
-    logging.warning("Prefix is a string, appended space")
+    logging.debug("Prefix is a string, appended space")
 
 logging.warning("prefix == `" + prefix + "`")
 
@@ -40,9 +40,9 @@ points_per_hosted = server_cfg["points_per_hosted"]
 
 @bot.event
 async def on_ready():
-    logging.info("--------")
-    logging.info("Starting up...")
-    logging.info(str("Logged in as {0.user}, with ID {0.user.id}".format(bot)))
+    logging.debug("--------")
+    logging.debug("Starting up...")
+    logging.debug(str("Logged in as {0.user}, with ID {0.user.id}".format(bot)))
     await bot.change_presence(game=discord.Game(name='Help: '
                                                      + prefix +
                                                      'rtfm'))
