@@ -29,6 +29,7 @@ bot = commands.Bot(command_prefix=prefix)
 bot_channel = None
 general_channel = None
 greeting_channel = None
+info_channel = None
 
 clan_name = server_cfg["clan_name"]
 
@@ -52,10 +53,12 @@ async def on_ready():
     global bot_channel
     global general_channel
     global greeting_channel
+    global info_channel
 
     bot_channel = bot.get_channel(server_cfg["bot_channel"])
     general_channel = bot.get_channel(server_cfg["general_channel"])
     greeting_channel = bot.get_channel(server_cfg["greeting_channel"])
+    info_channel = bot.get_channel(server_cfg["info_channel"])
 
     logging.info("--------")
 
@@ -80,19 +83,7 @@ member = discord.Member
 
 @bot.event
 async def on_member_join(member):
-    server = member.server
-    bot.send_typing(greeting_channel)
-    msg = "Welcome to " + clan_name + "! " \
-           "Please take a moment to read the notices in #announcements. " \
-           "Enjoy your stay!"
-    msg += "Can't talk? Change your discord nickname to match " \
-           "your RSN, so our robots can check your rank and give you " \
-           "permission."
-    bot.send_message(greeting_channel)
-
-# TODO: Logic to add evolved role if member is in clan
-
-    if server_cfg["automatic_greets"] == "True":
+    if server_cfg["automatic_greeting"] == "True":
         bot.send_typing(greeting_channel)
 
         # Define a list of greetings
@@ -135,21 +126,16 @@ async def on_member_join(member):
                          str(member.mention))]
 
         msg = random.choice(greetings)
+
+        if server_cfg["info_channel"] != "":
+            msg += "\n If you haven't already, please read everything posted in "
+            msg += bot.get_channel(server_cfg["info_channel"]).mention + ", "
+            msg += "and then follow the instructions to change your " \
+                   "server nickname."
+
         await bot.send_message(greeting_channel, msg)
 
-    if server_cfg["send_direct_welcome"] == "True":
-        msg = ".\n"
-        msg += "Hey there!  "
-        msg += "Welcome to the " + clan_name + " discord server.\n\n"
-        msg += "Please take a moment to look over the rules and " \
-               "information posted in **#announcements** if you haven't " \
-               "already. \n\n" \
-               "As a reminder: *You will not be able to talk outside of " \
-               "the #pleb-landing channel until you officially join " + \
-               clan_name + "!* If you are already a member of the clan, " \
-                           "your role should be updated shortly.\n\n"
-        msg += "Stay classy. \n"
-        await bot.send_message(member, msg)
+    # TODO: Logic to add evolved role if member is in clan
 
 
 #################
@@ -168,7 +154,7 @@ async def rtfm(ctx):
     msg = "For more detailed help and usage "
     msg += "information please see the "
     msg += "latest documentation online: \n" \
-           "http://clan-tracker.docs.nerdoncloud.com/"
+           "<http://clan-tracker.docs.nerdoncloud.com/>"
 
     await bot.send_message(bot_channel, msg)
 
