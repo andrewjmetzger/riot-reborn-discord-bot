@@ -1,4 +1,5 @@
-FROM python:3
-ADD bot.py /
-RUN pip install -r requirements.txt
-CMD [ "python", "./bot.py" ]
+FROM python:3.6-alpine
+WORKDIR /app
+COPY . /app
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+CMD [ "python", "bot.py" ]
