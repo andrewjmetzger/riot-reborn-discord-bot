@@ -12,8 +12,8 @@ Player = player.Player
 
 logging.basicConfig(level=20, format='%(asctime)s - %(levelname)s - %(message)s')
 
-credentials_cfg = json.load(open("credentials.json"))
-server_cfg = json.load(open("server.json"))
+credentials_cfg = json.load(open("./config/credentials.json"))
+server_cfg = json.load(open("./config/server.json"))
 
 discord_token = credentials_cfg["discord_token"]
 
