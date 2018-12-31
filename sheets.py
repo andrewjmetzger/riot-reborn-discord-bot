@@ -3,7 +3,7 @@ import json
 from oauth2client.service_account import ServiceAccountCredentials
 
 _credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    "credentials.json",
+    "config/credentials.json",
     [
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive"
@@ -21,7 +21,7 @@ def _get_client():
 
 
 def get_sheet():
-    _sheet = json.load(open("credentials.json"))
+    _sheet = json.load(open("config/credentials.json"))
     return _get_client().open_by_key(_sheet["spreadsheet_key"])
 
 
