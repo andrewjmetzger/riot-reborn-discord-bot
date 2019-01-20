@@ -1,5 +1,8 @@
 # Clan Tracker Discord Bot
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/caa7f535a3e5c1bfe982/maintainability)](https://codeclimate.com/github/andrewjmetzger/riot-reborn-discord-bot/maintainability)
+
+
 A discord bot that helps manage your RuneScape 3 clan.
 
 # Get help
