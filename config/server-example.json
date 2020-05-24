@@ -1,0 +1,19 @@
+{
+  "prefix": "!track",
+  "bot_owner": 000000000000000000,
+
+  "clan_name": "Your Clan",
+  "staff_roles": ["Keyholders", "Admins"],
+
+  "bot_channel": 000000000000000000,
+  "greeting_channel": 000000000000000000,
+  "general_channel": 000000000000000000,
+  "info_channel": 000000000000000000,
+
+  "automatic_greeting": "True",
+
+  "points_per_recruit": 0.25,
+  "points_per_cap": 1,
+  "points_per_attended": 0.25,
+  "points_per_hosted": 1
+}
