@@ -1,6 +1,2 @@
-discord==0.0.2
-discord.py==0.16.12
-google-api-python-client==1.6.6
-gspread==2.0.1
-oauth2client==4.1.2
-python-dotenv
+discord.py[voice]~=1.0.0
+gspread>=3.6.0

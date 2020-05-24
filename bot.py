@@ -44,9 +44,7 @@ async def on_ready():
     logging.debug("--------")
     logging.debug("Starting up...")
     logging.debug(str("Logged in as {0.user}, with ID {0.user.id}".format(bot)))
-    await bot.change_presence(game=discord.Game(name='Help: '
-                                                     + prefix +
-                                                     'rtfm'))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=prefix + 'rtfm'))
 
     logging.info(discord.version_info)
 
@@ -78,14 +76,12 @@ async def on_ready():
 # CUSTOM JOIN MESSAGES #
 ########################
 
-member = discord.Member
+member = discord.guild.Member
 
 
 @bot.event
-async def on_member_join(member):
+async def on_member_join(self, member):
     if server_cfg["automatic_greeting"] == "True":
-        bot.send_typing(greeting_channel)
-
         # Define a list of greetings
 
         greetings = ["Hey there, {0}".format(str(member.mention)),
@@ -127,13 +123,13 @@ async def on_member_join(member):
 
         msg = random.choice(greetings)
 
-        if server_cfg["info_channel"] != "":
+        if server_cfg["info_channel"] != 0:
             msg += "\n If you haven't already, please read everything posted in "
             msg += bot.get_channel(server_cfg["info_channel"]).mention + ", "
             msg += "and then follow the instructions to change your " \
                    "server nickname."
 
-        await bot.send_message(greeting_channel, msg)
+        await greeting_channel.send(msg)
 
     # TODO: Logic to add evolved role if member is in clan
 
@@ -145,7 +141,7 @@ async def on_member_join(member):
 @bot.group(pass_context=True)
 async def rtfm(ctx):
     """
-    Show more detailed help information.
+    Show detailed help information.
 
     Usage:
         !track rtfm
@@ -154,9 +150,9 @@ async def rtfm(ctx):
     msg = "For more detailed help and usage "
     msg += "information please see the "
     msg += "latest documentation online: \n" \
-           "<http://clan-tracker.docs.nerdoncloud.com/>"
+           "<https://docs.mtz.gr/clan-tracker-discord-bot/>"
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 ################
@@ -178,7 +174,7 @@ async def track(ctx):
         msg += "*Check your message for errors and try again."
         msg += "Perhaps you should*"
         msg += "`!track rtfm`*?*"
-        await bot.send_message(bot_channel, msg)
+        await bot_channel.send(msg)
 
 
 @bot.command(pass_context=True)
@@ -189,8 +185,6 @@ async def joined(ctx, player_name: str, date: str, recruited_by=None):
     Usage:
         !track joined "<player_name>" <date> "[recruited_by]"
     """
-
-    bot.send_typing(bot_channel)
 
     Player.new(player_name, date, recruited_by=None)
 
@@ -210,7 +204,7 @@ async def joined(ctx, player_name: str, date: str, recruited_by=None):
         player.recruited_by = ""
         msg += ""
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 @bot.command(pass_context=True)
@@ -225,7 +219,7 @@ async def leave(ctx, player_name: str):
     """
 
     import time
-    await bot.send_typing(bot_channel)
+    await ctx.trigger_typing()
 
     Player.find(player_name).delete()
 
@@ -236,7 +230,7 @@ async def leave(ctx, player_name: str):
     msg += "*If this was not intended, notify your administrator immediately "
     msg += "so that they can try to revert the change.*"
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 @bot.command(pass_context=True)
@@ -248,7 +242,7 @@ async def capped(ctx, player_name: str, date: str):
         !track capped "<player_name>" <date>
     """
 
-    bot.send_typing(bot_channel)
+    ctx.trigger_typing()
 
     player = Player.find(player_name)
     player.times_capped += 1
@@ -259,7 +253,7 @@ async def capped(ctx, player_name: str, date: str):
     msg += "They just earned " + str(points_per_cap) + " point(s). \n"
     msg += "*(More info: `!track whois \"" + player_name + "\"`)*"
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 @bot.command(pass_context=True)
@@ -271,7 +265,7 @@ async def attended(ctx, player_name: str, date: str):
         !track attended "<player_name>" <date>
     """
 
-    bot.send_typing(bot_channel)
+    ctx.trigger_typing()
 
     player = Player.find(player_name)
     player.events_attended += 1
@@ -282,7 +276,7 @@ async def attended(ctx, player_name: str, date: str):
     msg += str(points_per_attended) + " point(s) "
     msg += "for attending an event on " + date + ".\n"
     msg += "*(More info: `!track whois \"" + player_name + "\"`)*"
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 @bot.command(pass_context=True)
@@ -294,7 +288,7 @@ async def hosted(ctx, player_name: str, date: str):
         !track hosted "<player_name>" <date>
     """
 
-    bot.send_typing(bot_channel)
+    ctx.trigger_typing()
 
     player = Player.find(player_name)
     player.events_hosted += 1
@@ -305,7 +299,7 @@ async def hosted(ctx, player_name: str, date: str):
         points_per_hosted) + " point(s) "
     msg += "for hosting an event on " + date + ".\n"
     msg += "*(More info: `!track whois \"" + player_name + "\"`)*"
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 @bot.command(pass_context=True)
@@ -317,7 +311,7 @@ async def whois(ctx, player_name: str):
         !track whois "<player_name>"
     """
 
-    await  bot.send_typing(ctx.message.channel)
+    await ctx.trigger_typing()
 
     info = "```\n"
     info += "**RECORDS FOR " + player_name.upper() + "**\n"
@@ -342,7 +336,7 @@ async def whois(ctx, player_name: str):
     info += "     Total Points : " + str(player.total_points) + "\n"
     info += "```"
 
-    await bot.send_message(ctx.message.channel, info)
+    await ctx.send(info)
 
 
 @bot.command(pass_context=True)
@@ -354,26 +348,27 @@ async def rename(ctx, old_name: str, new_name: str, date: str):
     Usage:
         !track rename "<old_name>" "<new_name>" <date>
     """
-    await bot.send_typing(bot_channel)
+    await ctx.trigger_typing()
 
     Player.name = new_name
+    # TODO: Also change discord nickname
 
     msg = '"__' + old_name + '__" was renamed to "__' + new_name
     msg += '__" by ' + str(ctx.message.author.nick) + ' on ' + date + '.\n'
     msg += "[WARN] *Please use the new name when referencing this player"
     msg += " in the future, or the bot will get confused.*"
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 @bot.command(pass_context=True)
-async def dm(ctx, nick, msg):
-    server = discord.Server
+async def dm(ctx, recipient, msg):
 
-    recipient = ctx.message.server.get_member_named(nick)
+    recipient = bot.get_user(ctx.message.mentions[0].id)
+    print(recipient)
 
-    msg = msg.replace("$nick", nick)
-    await bot.send_message(recipient, msg)
+    msg = msg.replace("$nick", str(recipient))
+    await recipient.send(msg)
 
 
 ################################
@@ -395,7 +390,7 @@ async def utils():
 async def more(ctx):
     msg = "[ERR] Invalid command. \n"
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 @utils.command(pass_context=True)
@@ -420,7 +415,7 @@ async def suspend(ctx, duration: int = 15):
     msg += "functionality "
     msg += "as soon as possible."
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
     await bot.logout()
 
@@ -432,7 +427,7 @@ async def resume(ctx):
     msg += "The tracker system is now online. "
     msg += "Thank you for your patience."
 
-    await bot.send_message(bot_channel, msg)
+    await bot_channel.send(msg)
 
 
 if __name__ == '__main__':
